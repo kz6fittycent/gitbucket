@@ -21,6 +21,8 @@ apps:
       - network-bind
       - network
       - home
+    environment:
+      JAVA_HOME: $SNAP/usr/lib/jvm/java-8-openjdk-amd64/    
       
 parts:
   gitbucket:  
