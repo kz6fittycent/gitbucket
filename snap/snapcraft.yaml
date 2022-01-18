@@ -32,12 +32,12 @@ parts:
       snapcraftctl pull
       snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
       
-  build-packages:
-    - openjdk-8-jre-headless        
-    - ca-certificates-java
-    - ca-certificates  
+    build-packages:
+      - openjdk-8-jre-headless        
+      - ca-certificates-java
+      - ca-certificates  
     
-  stage-packages:
-    - openjdk-8-jre-headless        
-    - ca-certificates-java
-    - ca-certificates    
+    stage-packages:
+      - openjdk-8-jre-headless        
+      - ca-certificates-java
+      - ca-certificates    
