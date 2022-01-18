@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -e
+(
+	$SNAP_USER_DATA/gitbucket/java -jar gitbucket.war
+)
