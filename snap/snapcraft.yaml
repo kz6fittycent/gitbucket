@@ -1,0 +1,43 @@
+name: gitbucket
+adopt-info: gitbucket
+
+summary: yada yada
+description: | 
+  blah blah
+license: Apache-2.0
+
+base: core20
+grade: stable
+confinement: strict
+compression: lzo
+
+architectures:
+  - build-on: amd64
+  
+apps:
+  gitbucket:
+    command: java -jar gitbucket.war
+    plugs:
+      - network-bind
+      - network
+      - home
+      
+parts:
+  gitbucket:  
+    source: https://github.com/gitbucket/gitbucket
+    source-type: git
+    plugin: java
+    
+    override-pull: |
+      snapcraftctl pull
+      snapcraftctl set-version "$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"
+      
+  build-packages:
+    - openjdk-8-jre-headless        
+    - ca-certificates-java
+    - ca-certificates  
+    
+  stage-packages:
+    - openjdk-8-jre-headless        
+    - ca-certificates-java
+    - ca-certificates    
