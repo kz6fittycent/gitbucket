@@ -16,7 +16,7 @@ architectures:
   
 apps:
   gitbucket:
-    command: bin/java -jar gitbucket.war
+    command: bin/java -jar $SNAP_USER_DATA/gitbucket.war
     plugs:
       - network-bind
       - network
