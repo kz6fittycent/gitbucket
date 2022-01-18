@@ -16,7 +16,7 @@ architectures:
   
 apps:
   gitbucket:
-    command: bin/java -jar $SNAP_USER_DATA/gitbucket.war
+    command: launch
     plugs:
       - network-bind
       - network
@@ -43,3 +43,7 @@ parts:
       - openjdk-8-jre-headless        
       - ca-certificates-java
       - ca-certificates    
+  
+  launcher:
+    plugin: dump
+    source: scripts
