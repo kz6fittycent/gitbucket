@@ -16,7 +16,7 @@ architectures:
   
 apps:
   gitbucket:
-    command: java -jar gitbucket.war
+    command: bin/java -jar gitbucket.war
     plugs:
       - network-bind
       - network
